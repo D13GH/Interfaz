@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="GrpRbtn_TypeAlgorithm">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -23,25 +27,21 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="TPT" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
+          <Component id="TPT" min="-2" pref="822" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="TPT" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
+          <Component id="TPT" alignment="0" pref="267" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JTabbedPane" name="TPT">
+      <Properties>
+        <Property name="tabLayoutPolicy" type="int" value="1"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
@@ -57,15 +57,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" alignment="0" pref="797" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" pref="817" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jScrollPane1" min="-2" pref="268" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="jScrollPane1" alignment="0" pref="238" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -79,6 +76,9 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="Table_Leer">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Monospaced" size="12" style="0"/>
+                    </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="3" rowCount="0">
                         <Column editable="true" title="id" type="java.lang.Object"/>
@@ -112,7 +112,7 @@
                           <Component id="P_Container_Acciones_Desc" max="32767" attributes="0"/>
                           <Component id="P_Container_Acciones_Leer" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="431" max="32767" attributes="0"/>
+                      <EmptySpace pref="451" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -128,7 +128,7 @@
                           </Group>
                           <Component id="P_Container_Patron" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="69" max="32767" attributes="0"/>
+                      <EmptySpace pref="39" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -141,7 +141,7 @@
                     <TitledBorder title="Patron"/>
                   </Border>
                 </Property>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
+                <Property name="toolTipText" type="java.lang.String" value="Entrada de patron para entrenamiento"/>
                 <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
 
@@ -152,106 +152,106 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="F0_C0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F0_C0" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F0_C1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F0_C1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F0_C2" min="-2" pref="21" max="-2" attributes="0"/>
+                                  <Component id="Pen_F0_C2" min="-2" pref="21" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F0_C3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F0_C3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F0_C4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F0_C4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F0_C5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F0_C5" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="F1_C0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F1_C0" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F1_C1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F1_C1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F1_C2" min="-2" pref="21" max="-2" attributes="0"/>
+                                  <Component id="Pen_F1_C2" min="-2" pref="21" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F1_C3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F1_C3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F1_C4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F1_C4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F1_C5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F1_C5" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="F2_C0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F2_C0" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F2_C1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F2_C1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F2_C2" min="-2" pref="21" max="-2" attributes="0"/>
+                                  <Component id="Pen_F2_C2" min="-2" pref="21" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F2_C3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F2_C3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F2_C4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F2_C4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F2_C5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F2_C5" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="F3_C0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F3_C0" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F3_C1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F3_C1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F3_C2" min="-2" pref="21" max="-2" attributes="0"/>
+                                  <Component id="Pen_F3_C2" min="-2" pref="21" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F3_C3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F3_C3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F3_C4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F3_C4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F3_C5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F3_C5" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="F4_C0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F4_C0" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F4_C1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F4_C1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F4_C2" min="-2" pref="21" max="-2" attributes="0"/>
+                                  <Component id="Pen_F4_C2" min="-2" pref="21" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F4_C3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F4_C3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F4_C4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F4_C4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F4_C5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F4_C5" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="F5_C0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F5_C0" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F5_C1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F5_C1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F5_C2" min="-2" pref="21" max="-2" attributes="0"/>
+                                  <Component id="Pen_F5_C2" min="-2" pref="21" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F5_C3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F5_C3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F5_C4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F5_C4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F5_C5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F5_C5" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="F6_C0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F6_C0" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F6_C1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F6_C1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F6_C2" min="-2" pref="21" max="-2" attributes="0"/>
+                                  <Component id="Pen_F6_C2" min="-2" pref="21" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F6_C3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F6_C3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F6_C4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F6_C4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F6_C5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F6_C5" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="F0_C6" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="F1_C6" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="F2_C6" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="F3_C6" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="F4_C6" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="F5_C6" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="F6_C6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pen_F0_C6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pen_F1_C6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pen_F2_C6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pen_F3_C6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pen_F4_C6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pen_F5_C6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pen_F6_C6" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -263,96 +263,96 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="F0_C6" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F0_C6" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F1_C6" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F1_C6" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F2_C6" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F2_C6" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F3_C6" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F3_C6" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F4_C6" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F4_C6" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F5_C6" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F5_C6" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="F6_C6" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pen_F6_C6" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="F0_C2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="F0_C3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Pen_F0_C2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Pen_F0_C3" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="F0_C0" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F0_C1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F0_C4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F0_C0" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F0_C1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F0_C4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="F0_C5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Pen_F0_C5" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="F1_C2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Pen_F1_C2" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="F1_C0" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F1_C1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F1_C3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F1_C4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F1_C0" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F1_C1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F1_C3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F1_C4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="F1_C5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Pen_F1_C5" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="F2_C2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Pen_F2_C2" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="F2_C0" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F2_C1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F2_C3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F2_C4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F2_C0" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F2_C1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F2_C3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F2_C4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="F2_C5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Pen_F2_C5" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="F3_C2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Pen_F3_C2" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="F3_C0" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F3_C1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F3_C3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F3_C4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F3_C0" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F3_C1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F3_C3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F3_C4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="F3_C5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Pen_F3_C5" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="F4_C2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Pen_F4_C2" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="F4_C0" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F4_C1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F4_C3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F4_C4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F4_C0" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F4_C1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F4_C3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F4_C4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="F4_C5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Pen_F4_C5" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="F5_C2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Pen_F5_C2" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="F5_C0" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F5_C1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F5_C3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F5_C4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F5_C0" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F5_C1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F5_C3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F5_C4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="F5_C5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Pen_F5_C5" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="F6_C2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Pen_F6_C2" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="F6_C0" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F6_C1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F6_C3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="F6_C4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F6_C0" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F6_C1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F6_C3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Pen_F6_C4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="F6_C5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Pen_F6_C5" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -362,247 +362,247 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JRadioButton" name="F0_C0">
+                <Component class="javax.swing.JRadioButton" name="Pen_F0_C0">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="0,0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F0_C1">
+                <Component class="javax.swing.JRadioButton" name="Pen_F0_C1">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="0,1"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F0_C2">
+                <Component class="javax.swing.JRadioButton" name="Pen_F0_C2">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="0,2"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F0_C3">
+                <Component class="javax.swing.JRadioButton" name="Pen_F0_C3">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="0,3"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F0_C4">
+                <Component class="javax.swing.JRadioButton" name="Pen_F0_C4">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="0,4"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F0_C5">
+                <Component class="javax.swing.JRadioButton" name="Pen_F0_C5">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="0,5"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F1_C0">
+                <Component class="javax.swing.JRadioButton" name="Pen_F1_C0">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="1,0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F1_C1">
+                <Component class="javax.swing.JRadioButton" name="Pen_F1_C1">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="1,1"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F1_C2">
+                <Component class="javax.swing.JRadioButton" name="Pen_F1_C2">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="1,2"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F1_C3">
+                <Component class="javax.swing.JRadioButton" name="Pen_F1_C3">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="1,3"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F1_C4">
+                <Component class="javax.swing.JRadioButton" name="Pen_F1_C4">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="1,4"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F1_C5">
+                <Component class="javax.swing.JRadioButton" name="Pen_F1_C5">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="1,5"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F2_C0">
+                <Component class="javax.swing.JRadioButton" name="Pen_F2_C0">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="2,0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F2_C1">
+                <Component class="javax.swing.JRadioButton" name="Pen_F2_C1">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="2,1"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F2_C2">
+                <Component class="javax.swing.JRadioButton" name="Pen_F2_C2">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="2,2"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F2_C3">
+                <Component class="javax.swing.JRadioButton" name="Pen_F2_C3">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="2,3"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F2_C4">
+                <Component class="javax.swing.JRadioButton" name="Pen_F2_C4">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="2,4"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F2_C5">
+                <Component class="javax.swing.JRadioButton" name="Pen_F2_C5">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="2,5"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F3_C4">
+                <Component class="javax.swing.JRadioButton" name="Pen_F3_C4">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="3,4"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F3_C0">
+                <Component class="javax.swing.JRadioButton" name="Pen_F3_C0">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="3,0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F3_C1">
+                <Component class="javax.swing.JRadioButton" name="Pen_F3_C1">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="3,1"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F3_C2">
+                <Component class="javax.swing.JRadioButton" name="Pen_F3_C2">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="3,2"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F3_C3">
+                <Component class="javax.swing.JRadioButton" name="Pen_F3_C3">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="3,3"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F3_C5">
+                <Component class="javax.swing.JRadioButton" name="Pen_F3_C5">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="3,5"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F4_C0">
+                <Component class="javax.swing.JRadioButton" name="Pen_F4_C0">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="4,0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F4_C1">
+                <Component class="javax.swing.JRadioButton" name="Pen_F4_C1">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="4,1"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F4_C2">
+                <Component class="javax.swing.JRadioButton" name="Pen_F4_C2">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="4,2"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F4_C3">
+                <Component class="javax.swing.JRadioButton" name="Pen_F4_C3">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="4,3"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F4_C4">
+                <Component class="javax.swing.JRadioButton" name="Pen_F4_C4">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="4,4"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F4_C5">
+                <Component class="javax.swing.JRadioButton" name="Pen_F4_C5">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="4,5"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F5_C0">
+                <Component class="javax.swing.JRadioButton" name="Pen_F5_C0">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="5,0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F5_C1">
+                <Component class="javax.swing.JRadioButton" name="Pen_F5_C1">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="5,1"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F5_C2">
+                <Component class="javax.swing.JRadioButton" name="Pen_F5_C2">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="5,2"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F5_C3">
+                <Component class="javax.swing.JRadioButton" name="Pen_F5_C3">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="5,3"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F5_C4">
+                <Component class="javax.swing.JRadioButton" name="Pen_F5_C4">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="5,4"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F5_C5">
+                <Component class="javax.swing.JRadioButton" name="Pen_F5_C5">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="5,5"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F6_C0">
+                <Component class="javax.swing.JRadioButton" name="Pen_F6_C0">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="6,0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F6_C1">
+                <Component class="javax.swing.JRadioButton" name="Pen_F6_C1">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="6,1"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F6_C2">
+                <Component class="javax.swing.JRadioButton" name="Pen_F6_C2">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="6,2"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F6_C3">
+                <Component class="javax.swing.JRadioButton" name="Pen_F6_C3">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="6,3"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F6_C4">
+                <Component class="javax.swing.JRadioButton" name="Pen_F6_C4">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="6,4"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F6_C5">
+                <Component class="javax.swing.JRadioButton" name="Pen_F6_C5">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="6,5"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F0_C6">
+                <Component class="javax.swing.JRadioButton" name="Pen_F0_C6">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="0,5"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F1_C6">
+                <Component class="javax.swing.JRadioButton" name="Pen_F1_C6">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="1,5"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F2_C6">
+                <Component class="javax.swing.JRadioButton" name="Pen_F2_C6">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="2,5"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F3_C6">
+                <Component class="javax.swing.JRadioButton" name="Pen_F3_C6">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="3,5"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F4_C6">
+                <Component class="javax.swing.JRadioButton" name="Pen_F4_C6">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="4,5"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F5_C6">
+                <Component class="javax.swing.JRadioButton" name="Pen_F5_C6">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="5,5"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="F6_C6">
+                <Component class="javax.swing.JRadioButton" name="Pen_F6_C6">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="6,5"/>
                   </Properties>
@@ -697,11 +697,695 @@
             </Container>
           </SubComponents>
         </Container>
+        <Container class="javax.swing.JPanel" name="P_Borrar">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Borrar">
+                <Property name="tabTitle" type="java.lang.String" value="Borrar"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="817" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="238" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+        </Container>
+        <Container class="javax.swing.JPanel" name="P_Main">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Main">
+                <Property name="tabTitle" type="java.lang.String" value="Main"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="P_Container_Patron1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="170" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jPanel2" max="32767" attributes="0"/>
+                          <Component id="P_Container_Patron1" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="P_Container_Patron1">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                    <TitledBorder title="Patron"/>
+                  </Border>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Entrada de patron para entrenamiento"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Pe_F0_C0" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F1_C0" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F2_C0" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F3_C0" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F4_C0" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F5_C0" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F6_C0" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Pe_F0_C1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F1_C1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F2_C1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F3_C1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F4_C1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F5_C1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F6_C1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Pe_F0_C2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F1_C2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F2_C2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F3_C2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F4_C2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F5_C2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F6_C2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Pe_F0_C3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F1_C3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F2_C3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F3_C3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F4_C3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F5_C3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F6_C3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Pe_F0_C4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F1_C4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F2_C4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F3_C4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F4_C4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F5_C4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F6_C4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Pe_F0_C5" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F1_C5" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F2_C5" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F3_C5" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F4_C5" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F5_C5" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F6_C5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Pe_F0_C6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F1_C6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F2_C6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F3_C6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F4_C6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F5_C6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pe_F6_C6" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="Pe_F0_C6" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F1_C6" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F2_C6" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F3_C6" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F4_C6" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F5_C6" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F6_C6" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="Pe_F0_C5" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F1_C5" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F2_C5" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F3_C5" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F4_C5" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F5_C5" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F6_C5" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="Pe_F0_C4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F1_C4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F2_C4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F3_C4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F4_C4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F5_C4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F6_C4" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="Pe_F0_C3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F1_C3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F2_C3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F3_C3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F4_C3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F5_C3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F6_C3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="Pe_F0_C2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F1_C2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F2_C2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F3_C2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F4_C2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F5_C2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F6_C2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="Pe_F0_C1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F1_C1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F2_C1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F3_C1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F4_C1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F5_C1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F6_C1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="Pe_F0_C0" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F1_C0" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F2_C0" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F3_C0" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F4_C0" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F5_C0" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Pe_F6_C0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="35" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JRadioButton" name="Pe_F0_C0">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="0,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F1_C0">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="1,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F2_C0">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="2,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F3_C0">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="3,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F4_C0">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="4,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F5_C0">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="5,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F6_C0">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="6,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F4_C1">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="4,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F5_C1">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="5,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F0_C1">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="0,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F1_C1">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="1,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F2_C1">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="2,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F6_C1">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="6,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F3_C1">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="3,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F1_C2">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="1,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F3_C2">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="3,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F6_C2">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="6,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F0_C2">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="0,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F2_C2">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="2,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F4_C2">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="4,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F5_C2">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="5,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F6_C3">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="6,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F5_C3">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="5,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F0_C3">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="0,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F4_C3">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="4,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F3_C3">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="3,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F2_C3">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="2,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F1_C3">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="1,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F6_C4">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="6,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F4_C4">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="4,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F0_C4">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="0,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F1_C4">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="1,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F2_C4">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="2,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F5_C4">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="5,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F3_C4">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="3,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F6_C5">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="6,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F2_C5">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="2,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F0_C5">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="0,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F4_C5">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="4,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F5_C5">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="5,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F3_C5">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="3,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F1_C5">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="1,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F6_C6">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="6,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F0_C6">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="0,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F3_C6">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="3,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F2_C6">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="2,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F4_C6">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="4,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F1_C6">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="1,0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="Pe_F5_C6">
+                  <Properties>
+                    <Property name="toolTipText" type="java.lang.String" value="5,0"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel1">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                    <TitledBorder title="Tipo de Algorimo"/>
+                  </Border>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Seleccione tipo de Algoritmo a utilizar"/>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="rBtn_NNH" min="-2" max="-2" attributes="0"/>
+                              <Component id="rBtn_NNHGA" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="42" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="rBtn_NNH" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="rBtn_NNHGA" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JRadioButton" name="rBtn_NNH">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="GrpRbtn_TypeAlgorithm"/>
+                    </Property>
+                    <Property name="selected" type="boolean" value="true"/>
+                    <Property name="text" type="java.lang.String" value="Hopfield"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="rBtn_NNHGA">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="GrpRbtn_TypeAlgorithm"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="NNH-GA"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel2">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                    <TitledBorder title="Matriz"/>
+                  </Border>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Mariz de aprendizage"/>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jScrollPane3" pref="174" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jScrollPane3" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTextArea" name="TxtA_Matriz">
+                      <Properties>
+                        <Property name="columns" type="int" value="20"/>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Monospaced" size="12" style="0"/>
+                        </Property>
+                        <Property name="rows" type="int" value="5"/>
+                        <Property name="toolTipText" type="java.lang.String" value="Matriz de aprendizage"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel3">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                    <TitledBorder title="Aciones"/>
+                  </Border>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Acciones posibles"/>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Btn_Start" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Btn_Entrenar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="Btn_Start" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Btn_Entrenar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JButton" name="Btn_Start">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Empezar"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Inicia proceso"/>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_StartActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="Btn_Entrenar">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Entrenar"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Inicia proceso"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_EntrenarActionPerformed"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
         <Container class="javax.swing.JPanel" name="P_Acerca">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="tab3">
-                <Property name="tabTitle" type="java.lang.String" value="tab3"/>
+              <JTabbedPaneConstraints tabName="Acerca de">
+                <Property name="tabTitle" type="java.lang.String" value="Acerca de"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -709,56 +1393,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="797" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="817" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="268" max="32767" attributes="0"/>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-        </Container>
-        <Container class="javax.swing.JPanel" name="jPanel4">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="tab4">
-                <Property name="tabTitle" type="java.lang.String" value="tab4"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="797" max="32767" attributes="0"/>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="268" max="32767" attributes="0"/>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-        </Container>
-        <Container class="javax.swing.JPanel" name="jPanel5">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="tab5">
-                <Property name="tabTitle" type="java.lang.String" value="tab5"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="797" max="32767" attributes="0"/>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="268" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="238" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -775,12 +1415,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="797" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="817" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="268" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="238" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>

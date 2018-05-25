@@ -6,6 +6,7 @@
 package interfaz;
 
 
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.table.DefaultTableModel;
@@ -22,6 +23,8 @@ public class interfaz extends javax.swing.JFrame {
     private String[] patron_strg;       //strg=String
     private String patron_row = "";     //row=Patron de la tabla
 
+    private JRadioButton[] patron_e_rb; 
+    private int[] patron_e_int = new int[49];
     /**
      * Creates new form interfaz
      */
@@ -52,15 +55,27 @@ public class interfaz extends javax.swing.JFrame {
     {
         JRadioButton[] patron = 
         {
-            this.F0_C0, this.F0_C1, this.F0_C2, this.F0_C3, this.F0_C4, this.F0_C5, this.F0_C6,
-            this.F1_C0, this.F1_C1, this.F1_C2, this.F1_C3, this.F1_C4, this.F1_C5, this.F0_C6,
-            this.F2_C0, this.F2_C1, this.F2_C2, this.F2_C3, this.F2_C4, this.F2_C5, this.F0_C6,
-            this.F3_C0, this.F3_C1, this.F3_C2, this.F3_C3, this.F3_C4, this.F3_C5, this.F0_C6,
-            this.F4_C0, this.F4_C1, this.F4_C2, this.F4_C3, this.F4_C4, this.F4_C5, this.F0_C6,
-            this.F5_C0, this.F5_C1, this.F5_C2, this.F5_C3, this.F5_C4, this.F5_C5, this.F0_C6,
-            this.F6_C0, this.F6_C1, this.F6_C2, this.F6_C3, this.F6_C4, this.F6_C5, this.F0_C6,
+            this.Pen_F0_C0, this.Pen_F0_C1, this.Pen_F0_C2, this.Pen_F0_C3, this.Pen_F0_C4, this.Pen_F0_C5, this.Pen_F0_C6,
+            this.Pen_F1_C0, this.Pen_F1_C1, this.Pen_F1_C2, this.Pen_F1_C3, this.Pen_F1_C4, this.Pen_F1_C5, this.Pen_F0_C6,
+            this.Pen_F2_C0, this.Pen_F2_C1, this.Pen_F2_C2, this.Pen_F2_C3, this.Pen_F2_C4, this.Pen_F2_C5, this.Pen_F0_C6,
+            this.Pen_F3_C0, this.Pen_F3_C1, this.Pen_F3_C2, this.Pen_F3_C3, this.Pen_F3_C4, this.Pen_F3_C5, this.Pen_F0_C6,
+            this.Pen_F4_C0, this.Pen_F4_C1, this.Pen_F4_C2, this.Pen_F4_C3, this.Pen_F4_C4, this.Pen_F4_C5, this.Pen_F0_C6,
+            this.Pen_F5_C0, this.Pen_F5_C1, this.Pen_F5_C2, this.Pen_F5_C3, this.Pen_F5_C4, this.Pen_F5_C5, this.Pen_F0_C6,
+            this.Pen_F6_C0, this.Pen_F6_C1, this.Pen_F6_C2, this.Pen_F6_C3, this.Pen_F6_C4, this.Pen_F6_C5, this.Pen_F0_C6,
+        };
+        
+        JRadioButton[] patron_e = 
+        {
+            this.Pe_F0_C0, this.Pe_F0_C1, this.Pe_F0_C2, this.Pe_F0_C3, this.Pe_F0_C4, this.Pe_F0_C5, this.Pe_F0_C6,
+            this.Pe_F1_C0, this.Pe_F1_C1, this.Pe_F1_C2, this.Pe_F1_C3, this.Pe_F1_C4, this.Pe_F1_C5, this.Pe_F1_C6,
+            this.Pe_F2_C0, this.Pe_F2_C1, this.Pe_F2_C2, this.Pe_F2_C3, this.Pe_F2_C4, this.Pe_F2_C5, this.Pe_F2_C6,
+            this.Pe_F3_C0, this.Pe_F3_C1, this.Pe_F3_C2, this.Pe_F3_C3, this.Pe_F3_C4, this.Pe_F3_C5, this.Pe_F3_C6,
+            this.Pe_F4_C0, this.Pe_F4_C1, this.Pe_F4_C2, this.Pe_F4_C3, this.Pe_F4_C4, this.Pe_F4_C5, this.Pe_F4_C6,
+            this.Pe_F5_C0, this.Pe_F5_C1, this.Pe_F5_C2, this.Pe_F5_C3, this.Pe_F5_C4, this.Pe_F5_C5, this.Pe_F5_C6,
+            this.Pe_F6_C0, this.Pe_F6_C1, this.Pe_F6_C2, this.Pe_F6_C3, this.Pe_F6_C4, this.Pe_F6_C5, this.Pe_F6_C6,
         };
         this.patron_rb = patron;
+        this.patron_e_rb = patron_e;
     }
     
     private void createPatronString()
@@ -82,6 +97,19 @@ public class interfaz extends javax.swing.JFrame {
         }
     }
     
+    private void getPatronE()
+    {
+        for (int i = 0; i < patron_e_rb.length; i++) {
+            if (patron_e_rb[i].isSelected())
+            {
+                patron_e_int[i] = +1;
+            }
+            else{
+                patron_e_int[i] = -1;
+            }
+        }
+    }
+    
     private void showPatron()
     {
         String row = "";
@@ -99,6 +127,26 @@ public class interfaz extends javax.swing.JFrame {
             
         }
     }
+    
+    private void showPatronE()
+    {
+        String row_patron_e[] = new String[7];
+        int c = 0;
+        String matriz = "";
+        for (int i = 0; i < patron_e_int.length; i++) {
+            row_patron_e[c] = patron_e_int[i]>0?"+1":"-1";
+            c++;
+            if(c==7)
+            {
+                matriz += Arrays.toString(row_patron_e) + "\n";
+                c=0;
+            }
+            
+        }
+        TxtA_Matriz.setText(matriz.replace(" ", ""));
+        System.out.println(matriz);
+    }
+    
     private void addPatronTable()
     {
         DefaultTableModel defaultTableModel = (DefaultTableModel) Table_Leer.getModel();
@@ -126,73 +174,137 @@ public class interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        GrpRbtn_TypeAlgorithm = new javax.swing.ButtonGroup();
         TPT = new javax.swing.JTabbedPane();
         P_Leer = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Table_Leer = new javax.swing.JTable();
         P_Escribir = new javax.swing.JPanel();
         P_Container_Patron = new javax.swing.JPanel();
-        F0_C0 = new javax.swing.JRadioButton();
-        F0_C1 = new javax.swing.JRadioButton();
-        F0_C2 = new javax.swing.JRadioButton();
-        F0_C3 = new javax.swing.JRadioButton();
-        F0_C4 = new javax.swing.JRadioButton();
-        F0_C5 = new javax.swing.JRadioButton();
-        F1_C0 = new javax.swing.JRadioButton();
-        F1_C1 = new javax.swing.JRadioButton();
-        F1_C2 = new javax.swing.JRadioButton();
-        F1_C3 = new javax.swing.JRadioButton();
-        F1_C4 = new javax.swing.JRadioButton();
-        F1_C5 = new javax.swing.JRadioButton();
-        F2_C0 = new javax.swing.JRadioButton();
-        F2_C1 = new javax.swing.JRadioButton();
-        F2_C2 = new javax.swing.JRadioButton();
-        F2_C3 = new javax.swing.JRadioButton();
-        F2_C4 = new javax.swing.JRadioButton();
-        F2_C5 = new javax.swing.JRadioButton();
-        F3_C4 = new javax.swing.JRadioButton();
-        F3_C0 = new javax.swing.JRadioButton();
-        F3_C1 = new javax.swing.JRadioButton();
-        F3_C2 = new javax.swing.JRadioButton();
-        F3_C3 = new javax.swing.JRadioButton();
-        F3_C5 = new javax.swing.JRadioButton();
-        F4_C0 = new javax.swing.JRadioButton();
-        F4_C1 = new javax.swing.JRadioButton();
-        F4_C2 = new javax.swing.JRadioButton();
-        F4_C3 = new javax.swing.JRadioButton();
-        F4_C4 = new javax.swing.JRadioButton();
-        F4_C5 = new javax.swing.JRadioButton();
-        F5_C0 = new javax.swing.JRadioButton();
-        F5_C1 = new javax.swing.JRadioButton();
-        F5_C2 = new javax.swing.JRadioButton();
-        F5_C3 = new javax.swing.JRadioButton();
-        F5_C4 = new javax.swing.JRadioButton();
-        F5_C5 = new javax.swing.JRadioButton();
-        F6_C0 = new javax.swing.JRadioButton();
-        F6_C1 = new javax.swing.JRadioButton();
-        F6_C2 = new javax.swing.JRadioButton();
-        F6_C3 = new javax.swing.JRadioButton();
-        F6_C4 = new javax.swing.JRadioButton();
-        F6_C5 = new javax.swing.JRadioButton();
-        F0_C6 = new javax.swing.JRadioButton();
-        F1_C6 = new javax.swing.JRadioButton();
-        F2_C6 = new javax.swing.JRadioButton();
-        F3_C6 = new javax.swing.JRadioButton();
-        F4_C6 = new javax.swing.JRadioButton();
-        F5_C6 = new javax.swing.JRadioButton();
-        F6_C6 = new javax.swing.JRadioButton();
+        Pen_F0_C0 = new javax.swing.JRadioButton();
+        Pen_F0_C1 = new javax.swing.JRadioButton();
+        Pen_F0_C2 = new javax.swing.JRadioButton();
+        Pen_F0_C3 = new javax.swing.JRadioButton();
+        Pen_F0_C4 = new javax.swing.JRadioButton();
+        Pen_F0_C5 = new javax.swing.JRadioButton();
+        Pen_F1_C0 = new javax.swing.JRadioButton();
+        Pen_F1_C1 = new javax.swing.JRadioButton();
+        Pen_F1_C2 = new javax.swing.JRadioButton();
+        Pen_F1_C3 = new javax.swing.JRadioButton();
+        Pen_F1_C4 = new javax.swing.JRadioButton();
+        Pen_F1_C5 = new javax.swing.JRadioButton();
+        Pen_F2_C0 = new javax.swing.JRadioButton();
+        Pen_F2_C1 = new javax.swing.JRadioButton();
+        Pen_F2_C2 = new javax.swing.JRadioButton();
+        Pen_F2_C3 = new javax.swing.JRadioButton();
+        Pen_F2_C4 = new javax.swing.JRadioButton();
+        Pen_F2_C5 = new javax.swing.JRadioButton();
+        Pen_F3_C4 = new javax.swing.JRadioButton();
+        Pen_F3_C0 = new javax.swing.JRadioButton();
+        Pen_F3_C1 = new javax.swing.JRadioButton();
+        Pen_F3_C2 = new javax.swing.JRadioButton();
+        Pen_F3_C3 = new javax.swing.JRadioButton();
+        Pen_F3_C5 = new javax.swing.JRadioButton();
+        Pen_F4_C0 = new javax.swing.JRadioButton();
+        Pen_F4_C1 = new javax.swing.JRadioButton();
+        Pen_F4_C2 = new javax.swing.JRadioButton();
+        Pen_F4_C3 = new javax.swing.JRadioButton();
+        Pen_F4_C4 = new javax.swing.JRadioButton();
+        Pen_F4_C5 = new javax.swing.JRadioButton();
+        Pen_F5_C0 = new javax.swing.JRadioButton();
+        Pen_F5_C1 = new javax.swing.JRadioButton();
+        Pen_F5_C2 = new javax.swing.JRadioButton();
+        Pen_F5_C3 = new javax.swing.JRadioButton();
+        Pen_F5_C4 = new javax.swing.JRadioButton();
+        Pen_F5_C5 = new javax.swing.JRadioButton();
+        Pen_F6_C0 = new javax.swing.JRadioButton();
+        Pen_F6_C1 = new javax.swing.JRadioButton();
+        Pen_F6_C2 = new javax.swing.JRadioButton();
+        Pen_F6_C3 = new javax.swing.JRadioButton();
+        Pen_F6_C4 = new javax.swing.JRadioButton();
+        Pen_F6_C5 = new javax.swing.JRadioButton();
+        Pen_F0_C6 = new javax.swing.JRadioButton();
+        Pen_F1_C6 = new javax.swing.JRadioButton();
+        Pen_F2_C6 = new javax.swing.JRadioButton();
+        Pen_F3_C6 = new javax.swing.JRadioButton();
+        Pen_F4_C6 = new javax.swing.JRadioButton();
+        Pen_F5_C6 = new javax.swing.JRadioButton();
+        Pen_F6_C6 = new javax.swing.JRadioButton();
         P_Container_Acciones_Leer = new javax.swing.JPanel();
         Btn_ReadPatron = new javax.swing.JButton();
         Btn_LimpiarPatron = new javax.swing.JButton();
         P_Container_Acciones_Desc = new javax.swing.JPanel();
         TxF_Descripcion = new javax.swing.JTextField();
+        P_Borrar = new javax.swing.JPanel();
+        P_Main = new javax.swing.JPanel();
+        P_Container_Patron1 = new javax.swing.JPanel();
+        Pe_F0_C0 = new javax.swing.JRadioButton();
+        Pe_F1_C0 = new javax.swing.JRadioButton();
+        Pe_F2_C0 = new javax.swing.JRadioButton();
+        Pe_F3_C0 = new javax.swing.JRadioButton();
+        Pe_F4_C0 = new javax.swing.JRadioButton();
+        Pe_F5_C0 = new javax.swing.JRadioButton();
+        Pe_F6_C0 = new javax.swing.JRadioButton();
+        Pe_F4_C1 = new javax.swing.JRadioButton();
+        Pe_F5_C1 = new javax.swing.JRadioButton();
+        Pe_F0_C1 = new javax.swing.JRadioButton();
+        Pe_F1_C1 = new javax.swing.JRadioButton();
+        Pe_F2_C1 = new javax.swing.JRadioButton();
+        Pe_F6_C1 = new javax.swing.JRadioButton();
+        Pe_F3_C1 = new javax.swing.JRadioButton();
+        Pe_F1_C2 = new javax.swing.JRadioButton();
+        Pe_F3_C2 = new javax.swing.JRadioButton();
+        Pe_F6_C2 = new javax.swing.JRadioButton();
+        Pe_F0_C2 = new javax.swing.JRadioButton();
+        Pe_F2_C2 = new javax.swing.JRadioButton();
+        Pe_F4_C2 = new javax.swing.JRadioButton();
+        Pe_F5_C2 = new javax.swing.JRadioButton();
+        Pe_F6_C3 = new javax.swing.JRadioButton();
+        Pe_F5_C3 = new javax.swing.JRadioButton();
+        Pe_F0_C3 = new javax.swing.JRadioButton();
+        Pe_F4_C3 = new javax.swing.JRadioButton();
+        Pe_F3_C3 = new javax.swing.JRadioButton();
+        Pe_F2_C3 = new javax.swing.JRadioButton();
+        Pe_F1_C3 = new javax.swing.JRadioButton();
+        Pe_F6_C4 = new javax.swing.JRadioButton();
+        Pe_F4_C4 = new javax.swing.JRadioButton();
+        Pe_F0_C4 = new javax.swing.JRadioButton();
+        Pe_F1_C4 = new javax.swing.JRadioButton();
+        Pe_F2_C4 = new javax.swing.JRadioButton();
+        Pe_F5_C4 = new javax.swing.JRadioButton();
+        Pe_F3_C4 = new javax.swing.JRadioButton();
+        Pe_F6_C5 = new javax.swing.JRadioButton();
+        Pe_F2_C5 = new javax.swing.JRadioButton();
+        Pe_F0_C5 = new javax.swing.JRadioButton();
+        Pe_F4_C5 = new javax.swing.JRadioButton();
+        Pe_F5_C5 = new javax.swing.JRadioButton();
+        Pe_F3_C5 = new javax.swing.JRadioButton();
+        Pe_F1_C5 = new javax.swing.JRadioButton();
+        Pe_F6_C6 = new javax.swing.JRadioButton();
+        Pe_F0_C6 = new javax.swing.JRadioButton();
+        Pe_F3_C6 = new javax.swing.JRadioButton();
+        Pe_F2_C6 = new javax.swing.JRadioButton();
+        Pe_F4_C6 = new javax.swing.JRadioButton();
+        Pe_F1_C6 = new javax.swing.JRadioButton();
+        Pe_F5_C6 = new javax.swing.JRadioButton();
+        jPanel1 = new javax.swing.JPanel();
+        rBtn_NNH = new javax.swing.JRadioButton();
+        rBtn_NNHGA = new javax.swing.JRadioButton();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        TxtA_Matriz = new javax.swing.JTextArea();
+        jPanel3 = new javax.swing.JPanel();
+        Btn_Start = new javax.swing.JButton();
+        Btn_Entrenar = new javax.swing.JButton();
         P_Acerca = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        TPT.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        TPT.setToolTipText("");
+
+        Table_Leer.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         Table_Leer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -207,118 +319,116 @@ public class interfaz extends javax.swing.JFrame {
         P_Leer.setLayout(P_LeerLayout);
         P_LeerLayout.setHorizontalGroup(
             P_LeerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 797, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 817, Short.MAX_VALUE)
         );
         P_LeerLayout.setVerticalGroup(
             P_LeerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(P_LeerLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
         );
 
         TPT.addTab("Leer", P_Leer);
 
         P_Container_Patron.setBorder(javax.swing.BorderFactory.createTitledBorder("Patron"));
-        P_Container_Patron.setToolTipText("");
+        P_Container_Patron.setToolTipText("Entrada de patron para entrenamiento");
         P_Container_Patron.setName(""); // NOI18N
 
-        F0_C0.setToolTipText("0,0");
+        Pen_F0_C0.setToolTipText("0,0");
 
-        F0_C1.setToolTipText("0,1");
+        Pen_F0_C1.setToolTipText("0,1");
 
-        F0_C2.setToolTipText("0,2");
+        Pen_F0_C2.setToolTipText("0,2");
 
-        F0_C3.setToolTipText("0,3");
+        Pen_F0_C3.setToolTipText("0,3");
 
-        F0_C4.setToolTipText("0,4");
+        Pen_F0_C4.setToolTipText("0,4");
 
-        F0_C5.setToolTipText("0,5");
+        Pen_F0_C5.setToolTipText("0,5");
 
-        F1_C0.setToolTipText("1,0");
+        Pen_F1_C0.setToolTipText("1,0");
 
-        F1_C1.setToolTipText("1,1");
+        Pen_F1_C1.setToolTipText("1,1");
 
-        F1_C2.setToolTipText("1,2");
+        Pen_F1_C2.setToolTipText("1,2");
 
-        F1_C3.setToolTipText("1,3");
+        Pen_F1_C3.setToolTipText("1,3");
 
-        F1_C4.setToolTipText("1,4");
+        Pen_F1_C4.setToolTipText("1,4");
 
-        F1_C5.setToolTipText("1,5");
+        Pen_F1_C5.setToolTipText("1,5");
 
-        F2_C0.setToolTipText("2,0");
+        Pen_F2_C0.setToolTipText("2,0");
 
-        F2_C1.setToolTipText("2,1");
+        Pen_F2_C1.setToolTipText("2,1");
 
-        F2_C2.setToolTipText("2,2");
+        Pen_F2_C2.setToolTipText("2,2");
 
-        F2_C3.setToolTipText("2,3");
+        Pen_F2_C3.setToolTipText("2,3");
 
-        F2_C4.setToolTipText("2,4");
+        Pen_F2_C4.setToolTipText("2,4");
 
-        F2_C5.setToolTipText("2,5");
+        Pen_F2_C5.setToolTipText("2,5");
 
-        F3_C4.setToolTipText("3,4");
+        Pen_F3_C4.setToolTipText("3,4");
 
-        F3_C0.setToolTipText("3,0");
+        Pen_F3_C0.setToolTipText("3,0");
 
-        F3_C1.setToolTipText("3,1");
+        Pen_F3_C1.setToolTipText("3,1");
 
-        F3_C2.setToolTipText("3,2");
+        Pen_F3_C2.setToolTipText("3,2");
 
-        F3_C3.setToolTipText("3,3");
+        Pen_F3_C3.setToolTipText("3,3");
 
-        F3_C5.setToolTipText("3,5");
+        Pen_F3_C5.setToolTipText("3,5");
 
-        F4_C0.setToolTipText("4,0");
+        Pen_F4_C0.setToolTipText("4,0");
 
-        F4_C1.setToolTipText("4,1");
+        Pen_F4_C1.setToolTipText("4,1");
 
-        F4_C2.setToolTipText("4,2");
+        Pen_F4_C2.setToolTipText("4,2");
 
-        F4_C3.setToolTipText("4,3");
+        Pen_F4_C3.setToolTipText("4,3");
 
-        F4_C4.setToolTipText("4,4");
+        Pen_F4_C4.setToolTipText("4,4");
 
-        F4_C5.setToolTipText("4,5");
+        Pen_F4_C5.setToolTipText("4,5");
 
-        F5_C0.setToolTipText("5,0");
+        Pen_F5_C0.setToolTipText("5,0");
 
-        F5_C1.setToolTipText("5,1");
+        Pen_F5_C1.setToolTipText("5,1");
 
-        F5_C2.setToolTipText("5,2");
+        Pen_F5_C2.setToolTipText("5,2");
 
-        F5_C3.setToolTipText("5,3");
+        Pen_F5_C3.setToolTipText("5,3");
 
-        F5_C4.setToolTipText("5,4");
+        Pen_F5_C4.setToolTipText("5,4");
 
-        F5_C5.setToolTipText("5,5");
+        Pen_F5_C5.setToolTipText("5,5");
 
-        F6_C0.setToolTipText("6,0");
+        Pen_F6_C0.setToolTipText("6,0");
 
-        F6_C1.setToolTipText("6,1");
+        Pen_F6_C1.setToolTipText("6,1");
 
-        F6_C2.setToolTipText("6,2");
+        Pen_F6_C2.setToolTipText("6,2");
 
-        F6_C3.setToolTipText("6,3");
+        Pen_F6_C3.setToolTipText("6,3");
 
-        F6_C4.setToolTipText("6,4");
+        Pen_F6_C4.setToolTipText("6,4");
 
-        F6_C5.setToolTipText("6,5");
+        Pen_F6_C5.setToolTipText("6,5");
 
-        F0_C6.setToolTipText("0,5");
+        Pen_F0_C6.setToolTipText("0,5");
 
-        F1_C6.setToolTipText("1,5");
+        Pen_F1_C6.setToolTipText("1,5");
 
-        F2_C6.setToolTipText("2,5");
+        Pen_F2_C6.setToolTipText("2,5");
 
-        F3_C6.setToolTipText("3,5");
+        Pen_F3_C6.setToolTipText("3,5");
 
-        F4_C6.setToolTipText("4,5");
+        Pen_F4_C6.setToolTipText("4,5");
 
-        F5_C6.setToolTipText("5,5");
+        Pen_F5_C6.setToolTipText("5,5");
 
-        F6_C6.setToolTipText("6,5");
+        Pen_F6_C6.setToolTipText("6,5");
 
         javax.swing.GroupLayout P_Container_PatronLayout = new javax.swing.GroupLayout(P_Container_Patron);
         P_Container_Patron.setLayout(P_Container_PatronLayout);
@@ -328,98 +438,98 @@ public class interfaz extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(P_Container_PatronLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(P_Container_PatronLayout.createSequentialGroup()
-                        .addComponent(F0_C0)
+                        .addComponent(Pen_F0_C0)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F0_C1)
+                        .addComponent(Pen_F0_C1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F0_C2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Pen_F0_C2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F0_C3)
+                        .addComponent(Pen_F0_C3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F0_C4)
+                        .addComponent(Pen_F0_C4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F0_C5))
+                        .addComponent(Pen_F0_C5))
                     .addGroup(P_Container_PatronLayout.createSequentialGroup()
-                        .addComponent(F1_C0)
+                        .addComponent(Pen_F1_C0)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F1_C1)
+                        .addComponent(Pen_F1_C1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F1_C2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Pen_F1_C2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F1_C3)
+                        .addComponent(Pen_F1_C3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F1_C4)
+                        .addComponent(Pen_F1_C4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F1_C5))
+                        .addComponent(Pen_F1_C5))
                     .addGroup(P_Container_PatronLayout.createSequentialGroup()
-                        .addComponent(F2_C0)
+                        .addComponent(Pen_F2_C0)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F2_C1)
+                        .addComponent(Pen_F2_C1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F2_C2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Pen_F2_C2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F2_C3)
+                        .addComponent(Pen_F2_C3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F2_C4)
+                        .addComponent(Pen_F2_C4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F2_C5))
+                        .addComponent(Pen_F2_C5))
                     .addGroup(P_Container_PatronLayout.createSequentialGroup()
-                        .addComponent(F3_C0)
+                        .addComponent(Pen_F3_C0)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F3_C1)
+                        .addComponent(Pen_F3_C1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F3_C2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Pen_F3_C2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F3_C3)
+                        .addComponent(Pen_F3_C3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F3_C4)
+                        .addComponent(Pen_F3_C4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F3_C5))
+                        .addComponent(Pen_F3_C5))
                     .addGroup(P_Container_PatronLayout.createSequentialGroup()
-                        .addComponent(F4_C0)
+                        .addComponent(Pen_F4_C0)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F4_C1)
+                        .addComponent(Pen_F4_C1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F4_C2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Pen_F4_C2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F4_C3)
+                        .addComponent(Pen_F4_C3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F4_C4)
+                        .addComponent(Pen_F4_C4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F4_C5))
+                        .addComponent(Pen_F4_C5))
                     .addGroup(P_Container_PatronLayout.createSequentialGroup()
-                        .addComponent(F5_C0)
+                        .addComponent(Pen_F5_C0)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F5_C1)
+                        .addComponent(Pen_F5_C1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F5_C2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Pen_F5_C2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F5_C3)
+                        .addComponent(Pen_F5_C3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F5_C4)
+                        .addComponent(Pen_F5_C4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F5_C5))
+                        .addComponent(Pen_F5_C5))
                     .addGroup(P_Container_PatronLayout.createSequentialGroup()
-                        .addComponent(F6_C0)
+                        .addComponent(Pen_F6_C0)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F6_C1)
+                        .addComponent(Pen_F6_C1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F6_C2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Pen_F6_C2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F6_C3)
+                        .addComponent(Pen_F6_C3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F6_C4)
+                        .addComponent(Pen_F6_C4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F6_C5)))
+                        .addComponent(Pen_F6_C5)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(P_Container_PatronLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(F0_C6)
-                    .addComponent(F1_C6)
-                    .addComponent(F2_C6)
-                    .addComponent(F3_C6)
-                    .addComponent(F4_C6)
-                    .addComponent(F5_C6)
-                    .addComponent(F6_C6))
+                    .addComponent(Pen_F0_C6)
+                    .addComponent(Pen_F1_C6)
+                    .addComponent(Pen_F2_C6)
+                    .addComponent(Pen_F3_C6)
+                    .addComponent(Pen_F4_C6)
+                    .addComponent(Pen_F5_C6)
+                    .addComponent(Pen_F6_C6))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         P_Container_PatronLayout.setVerticalGroup(
@@ -428,82 +538,82 @@ public class interfaz extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(P_Container_PatronLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(P_Container_PatronLayout.createSequentialGroup()
-                        .addComponent(F0_C6)
+                        .addComponent(Pen_F0_C6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F1_C6)
+                        .addComponent(Pen_F1_C6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F2_C6)
+                        .addComponent(Pen_F2_C6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F3_C6)
+                        .addComponent(Pen_F3_C6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F4_C6)
+                        .addComponent(Pen_F4_C6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F5_C6)
+                        .addComponent(Pen_F5_C6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(F6_C6))
+                        .addComponent(Pen_F6_C6))
                     .addGroup(P_Container_PatronLayout.createSequentialGroup()
                         .addGroup(P_Container_PatronLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(F0_C2)
-                            .addComponent(F0_C3)
+                            .addComponent(Pen_F0_C2)
+                            .addComponent(Pen_F0_C3)
                             .addGroup(P_Container_PatronLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(F0_C0)
-                                .addComponent(F0_C1)
-                                .addComponent(F0_C4))
-                            .addComponent(F0_C5))
+                                .addComponent(Pen_F0_C0)
+                                .addComponent(Pen_F0_C1)
+                                .addComponent(Pen_F0_C4))
+                            .addComponent(Pen_F0_C5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(P_Container_PatronLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(F1_C2)
+                            .addComponent(Pen_F1_C2)
                             .addGroup(P_Container_PatronLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(F1_C0)
-                                .addComponent(F1_C1)
-                                .addComponent(F1_C3)
-                                .addComponent(F1_C4))
-                            .addComponent(F1_C5))
+                                .addComponent(Pen_F1_C0)
+                                .addComponent(Pen_F1_C1)
+                                .addComponent(Pen_F1_C3)
+                                .addComponent(Pen_F1_C4))
+                            .addComponent(Pen_F1_C5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(P_Container_PatronLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(F2_C2)
+                            .addComponent(Pen_F2_C2)
                             .addGroup(P_Container_PatronLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(F2_C0)
-                                .addComponent(F2_C1)
-                                .addComponent(F2_C3)
-                                .addComponent(F2_C4))
-                            .addComponent(F2_C5))
+                                .addComponent(Pen_F2_C0)
+                                .addComponent(Pen_F2_C1)
+                                .addComponent(Pen_F2_C3)
+                                .addComponent(Pen_F2_C4))
+                            .addComponent(Pen_F2_C5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(P_Container_PatronLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(F3_C2)
+                            .addComponent(Pen_F3_C2)
                             .addGroup(P_Container_PatronLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(F3_C0)
-                                .addComponent(F3_C1)
-                                .addComponent(F3_C3)
-                                .addComponent(F3_C4))
-                            .addComponent(F3_C5))
+                                .addComponent(Pen_F3_C0)
+                                .addComponent(Pen_F3_C1)
+                                .addComponent(Pen_F3_C3)
+                                .addComponent(Pen_F3_C4))
+                            .addComponent(Pen_F3_C5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(P_Container_PatronLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(F4_C2)
+                            .addComponent(Pen_F4_C2)
                             .addGroup(P_Container_PatronLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(F4_C0)
-                                .addComponent(F4_C1)
-                                .addComponent(F4_C3)
-                                .addComponent(F4_C4))
-                            .addComponent(F4_C5))
+                                .addComponent(Pen_F4_C0)
+                                .addComponent(Pen_F4_C1)
+                                .addComponent(Pen_F4_C3)
+                                .addComponent(Pen_F4_C4))
+                            .addComponent(Pen_F4_C5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(P_Container_PatronLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(F5_C2)
+                            .addComponent(Pen_F5_C2)
                             .addGroup(P_Container_PatronLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(F5_C0)
-                                .addComponent(F5_C1)
-                                .addComponent(F5_C3)
-                                .addComponent(F5_C4))
-                            .addComponent(F5_C5))
+                                .addComponent(Pen_F5_C0)
+                                .addComponent(Pen_F5_C1)
+                                .addComponent(Pen_F5_C3)
+                                .addComponent(Pen_F5_C4))
+                            .addComponent(Pen_F5_C5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(P_Container_PatronLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(F6_C2)
+                            .addComponent(Pen_F6_C2)
                             .addGroup(P_Container_PatronLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(F6_C0)
-                                .addComponent(F6_C1)
-                                .addComponent(F6_C3)
-                                .addComponent(F6_C4))
-                            .addComponent(F6_C5))))
+                                .addComponent(Pen_F6_C0)
+                                .addComponent(Pen_F6_C1)
+                                .addComponent(Pen_F6_C3)
+                                .addComponent(Pen_F6_C4))
+                            .addComponent(Pen_F6_C5))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -573,7 +683,7 @@ public class interfaz extends javax.swing.JFrame {
                 .addGroup(P_EscribirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(P_Container_Acciones_Desc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(P_Container_Acciones_Leer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(431, Short.MAX_VALUE))
+                .addContainerGap(451, Short.MAX_VALUE))
         );
         P_EscribirLayout.setVerticalGroup(
             P_EscribirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -585,59 +695,451 @@ public class interfaz extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(P_Container_Acciones_Leer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(P_Container_Patron, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         TPT.addTab("Escribir", P_Escribir);
+
+        javax.swing.GroupLayout P_BorrarLayout = new javax.swing.GroupLayout(P_Borrar);
+        P_Borrar.setLayout(P_BorrarLayout);
+        P_BorrarLayout.setHorizontalGroup(
+            P_BorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 817, Short.MAX_VALUE)
+        );
+        P_BorrarLayout.setVerticalGroup(
+            P_BorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 238, Short.MAX_VALUE)
+        );
+
+        TPT.addTab("Borrar", P_Borrar);
+
+        P_Container_Patron1.setBorder(javax.swing.BorderFactory.createTitledBorder("Patron"));
+        P_Container_Patron1.setToolTipText("Entrada de patron para entrenamiento");
+        P_Container_Patron1.setName(""); // NOI18N
+
+        Pe_F0_C0.setToolTipText("0,0");
+
+        Pe_F1_C0.setToolTipText("1,0");
+
+        Pe_F2_C0.setToolTipText("2,0");
+
+        Pe_F3_C0.setToolTipText("3,0");
+
+        Pe_F4_C0.setToolTipText("4,0");
+
+        Pe_F5_C0.setToolTipText("5,0");
+
+        Pe_F6_C0.setToolTipText("6,0");
+
+        Pe_F4_C1.setToolTipText("4,0");
+
+        Pe_F5_C1.setToolTipText("5,0");
+
+        Pe_F0_C1.setToolTipText("0,0");
+
+        Pe_F1_C1.setToolTipText("1,0");
+
+        Pe_F2_C1.setToolTipText("2,0");
+
+        Pe_F6_C1.setToolTipText("6,0");
+
+        Pe_F3_C1.setToolTipText("3,0");
+
+        Pe_F1_C2.setToolTipText("1,0");
+
+        Pe_F3_C2.setToolTipText("3,0");
+
+        Pe_F6_C2.setToolTipText("6,0");
+
+        Pe_F0_C2.setToolTipText("0,0");
+
+        Pe_F2_C2.setToolTipText("2,0");
+
+        Pe_F4_C2.setToolTipText("4,0");
+
+        Pe_F5_C2.setToolTipText("5,0");
+
+        Pe_F6_C3.setToolTipText("6,0");
+
+        Pe_F5_C3.setToolTipText("5,0");
+
+        Pe_F0_C3.setToolTipText("0,0");
+
+        Pe_F4_C3.setToolTipText("4,0");
+
+        Pe_F3_C3.setToolTipText("3,0");
+
+        Pe_F2_C3.setToolTipText("2,0");
+
+        Pe_F1_C3.setToolTipText("1,0");
+
+        Pe_F6_C4.setToolTipText("6,0");
+
+        Pe_F4_C4.setToolTipText("4,0");
+
+        Pe_F0_C4.setToolTipText("0,0");
+
+        Pe_F1_C4.setToolTipText("1,0");
+
+        Pe_F2_C4.setToolTipText("2,0");
+
+        Pe_F5_C4.setToolTipText("5,0");
+
+        Pe_F3_C4.setToolTipText("3,0");
+
+        Pe_F6_C5.setToolTipText("6,0");
+
+        Pe_F2_C5.setToolTipText("2,0");
+
+        Pe_F0_C5.setToolTipText("0,0");
+
+        Pe_F4_C5.setToolTipText("4,0");
+
+        Pe_F5_C5.setToolTipText("5,0");
+
+        Pe_F3_C5.setToolTipText("3,0");
+
+        Pe_F1_C5.setToolTipText("1,0");
+
+        Pe_F6_C6.setToolTipText("6,0");
+
+        Pe_F0_C6.setToolTipText("0,0");
+
+        Pe_F3_C6.setToolTipText("3,0");
+
+        Pe_F2_C6.setToolTipText("2,0");
+
+        Pe_F4_C6.setToolTipText("4,0");
+
+        Pe_F1_C6.setToolTipText("1,0");
+
+        Pe_F5_C6.setToolTipText("5,0");
+
+        javax.swing.GroupLayout P_Container_Patron1Layout = new javax.swing.GroupLayout(P_Container_Patron1);
+        P_Container_Patron1.setLayout(P_Container_Patron1Layout);
+        P_Container_Patron1Layout.setHorizontalGroup(
+            P_Container_Patron1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_Container_Patron1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(P_Container_Patron1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Pe_F0_C0)
+                    .addComponent(Pe_F1_C0)
+                    .addComponent(Pe_F2_C0)
+                    .addComponent(Pe_F3_C0)
+                    .addComponent(Pe_F4_C0)
+                    .addComponent(Pe_F5_C0)
+                    .addComponent(Pe_F6_C0))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(P_Container_Patron1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Pe_F0_C1)
+                    .addComponent(Pe_F1_C1)
+                    .addComponent(Pe_F2_C1)
+                    .addComponent(Pe_F3_C1)
+                    .addComponent(Pe_F4_C1)
+                    .addComponent(Pe_F5_C1)
+                    .addComponent(Pe_F6_C1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(P_Container_Patron1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Pe_F0_C2)
+                    .addComponent(Pe_F1_C2)
+                    .addComponent(Pe_F2_C2)
+                    .addComponent(Pe_F3_C2)
+                    .addComponent(Pe_F4_C2)
+                    .addComponent(Pe_F5_C2)
+                    .addComponent(Pe_F6_C2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(P_Container_Patron1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Pe_F0_C3)
+                    .addComponent(Pe_F1_C3)
+                    .addComponent(Pe_F2_C3)
+                    .addComponent(Pe_F3_C3)
+                    .addComponent(Pe_F4_C3)
+                    .addComponent(Pe_F5_C3)
+                    .addComponent(Pe_F6_C3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(P_Container_Patron1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Pe_F0_C4)
+                    .addComponent(Pe_F1_C4)
+                    .addComponent(Pe_F2_C4)
+                    .addComponent(Pe_F3_C4)
+                    .addComponent(Pe_F4_C4)
+                    .addComponent(Pe_F5_C4)
+                    .addComponent(Pe_F6_C4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(P_Container_Patron1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Pe_F0_C5)
+                    .addComponent(Pe_F1_C5)
+                    .addComponent(Pe_F2_C5)
+                    .addComponent(Pe_F3_C5)
+                    .addComponent(Pe_F4_C5)
+                    .addComponent(Pe_F5_C5)
+                    .addComponent(Pe_F6_C5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(P_Container_Patron1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Pe_F0_C6)
+                    .addComponent(Pe_F1_C6)
+                    .addComponent(Pe_F2_C6)
+                    .addComponent(Pe_F3_C6)
+                    .addComponent(Pe_F4_C6)
+                    .addComponent(Pe_F5_C6)
+                    .addComponent(Pe_F6_C6))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        P_Container_Patron1Layout.setVerticalGroup(
+            P_Container_Patron1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_Container_Patron1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(P_Container_Patron1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(P_Container_Patron1Layout.createSequentialGroup()
+                        .addComponent(Pe_F0_C6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F1_C6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F2_C6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F3_C6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F4_C6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F5_C6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F6_C6))
+                    .addGroup(P_Container_Patron1Layout.createSequentialGroup()
+                        .addComponent(Pe_F0_C5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F1_C5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F2_C5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F3_C5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F4_C5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F5_C5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F6_C5))
+                    .addGroup(P_Container_Patron1Layout.createSequentialGroup()
+                        .addComponent(Pe_F0_C4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F1_C4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F2_C4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F3_C4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F4_C4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F5_C4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F6_C4))
+                    .addGroup(P_Container_Patron1Layout.createSequentialGroup()
+                        .addComponent(Pe_F0_C3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F1_C3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F2_C3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F3_C3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F4_C3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F5_C3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F6_C3))
+                    .addGroup(P_Container_Patron1Layout.createSequentialGroup()
+                        .addComponent(Pe_F0_C2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F1_C2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F2_C2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F3_C2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F4_C2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F5_C2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F6_C2))
+                    .addGroup(P_Container_Patron1Layout.createSequentialGroup()
+                        .addComponent(Pe_F0_C1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F1_C1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F2_C1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F3_C1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F4_C1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F5_C1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F6_C1))
+                    .addGroup(P_Container_Patron1Layout.createSequentialGroup()
+                        .addComponent(Pe_F0_C0)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F1_C0)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F2_C0)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F3_C0)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F4_C0)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F5_C0)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pe_F6_C0)))
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Tipo de Algorimo"));
+        jPanel1.setToolTipText("Seleccione tipo de Algoritmo a utilizar");
+
+        GrpRbtn_TypeAlgorithm.add(rBtn_NNH);
+        rBtn_NNH.setSelected(true);
+        rBtn_NNH.setText("Hopfield");
+
+        GrpRbtn_TypeAlgorithm.add(rBtn_NNHGA);
+        rBtn_NNHGA.setText("NNH-GA");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rBtn_NNH)
+                    .addComponent(rBtn_NNHGA))
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(rBtn_NNH)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rBtn_NNHGA)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Matriz"));
+        jPanel2.setToolTipText("Mariz de aprendizage");
+
+        TxtA_Matriz.setColumns(20);
+        TxtA_Matriz.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        TxtA_Matriz.setRows(5);
+        TxtA_Matriz.setToolTipText("Matriz de aprendizage");
+        jScrollPane3.setViewportView(TxtA_Matriz);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jScrollPane3)
+                .addContainerGap())
+        );
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Aciones"));
+        jPanel3.setToolTipText("Acciones posibles");
+
+        Btn_Start.setText("Empezar");
+        Btn_Start.setToolTipText("Inicia proceso");
+        Btn_Start.setEnabled(false);
+        Btn_Start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_StartActionPerformed(evt);
+            }
+        });
+
+        Btn_Entrenar.setText("Entrenar");
+        Btn_Entrenar.setToolTipText("Inicia proceso");
+        Btn_Entrenar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_EntrenarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Btn_Start)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Btn_Entrenar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Btn_Start)
+                    .addComponent(Btn_Entrenar))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout P_MainLayout = new javax.swing.GroupLayout(P_Main);
+        P_Main.setLayout(P_MainLayout);
+        P_MainLayout.setHorizontalGroup(
+            P_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_MainLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(P_Container_Patron1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(P_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(170, Short.MAX_VALUE))
+        );
+        P_MainLayout.setVerticalGroup(
+            P_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_MainLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(P_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_MainLayout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(P_Container_Patron1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        TPT.addTab("Main", P_Main);
 
         javax.swing.GroupLayout P_AcercaLayout = new javax.swing.GroupLayout(P_Acerca);
         P_Acerca.setLayout(P_AcercaLayout);
         P_AcercaLayout.setHorizontalGroup(
             P_AcercaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 797, Short.MAX_VALUE)
+            .addGap(0, 817, Short.MAX_VALUE)
         );
         P_AcercaLayout.setVerticalGroup(
             P_AcercaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 268, Short.MAX_VALUE)
+            .addGap(0, 238, Short.MAX_VALUE)
         );
 
-        TPT.addTab("tab3", P_Acerca);
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 797, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 268, Short.MAX_VALUE)
-        );
-
-        TPT.addTab("tab4", jPanel4);
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 797, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 268, Short.MAX_VALUE)
-        );
-
-        TPT.addTab("tab5", jPanel5);
+        TPT.addTab("Acerca de", P_Acerca);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 797, Short.MAX_VALUE)
+            .addGap(0, 817, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 268, Short.MAX_VALUE)
+            .addGap(0, 238, Short.MAX_VALUE)
         );
 
         TPT.addTab("tab6", jPanel6);
@@ -646,17 +1148,11 @@ public class interfaz extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(TPT)
-                .addContainerGap())
+            .addComponent(TPT, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(TPT)
-                .addContainerGap())
+            .addComponent(TPT, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
         );
 
         pack();
@@ -679,6 +1175,17 @@ public class interfaz extends javax.swing.JFrame {
     private void Btn_LimpiarPatronActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_LimpiarPatronActionPerformed
         this.clearPatron();
     }//GEN-LAST:event_Btn_LimpiarPatronActionPerformed
+
+    private void Btn_EntrenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_EntrenarActionPerformed
+        this.getPatronE();
+        this.showPatronE();
+        this.Btn_Entrenar.setEnabled(false);
+        this.Btn_Start.setEnabled(true);
+    }//GEN-LAST:event_Btn_EntrenarActionPerformed
+
+    private void Btn_StartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_StartActionPerformed
+        JOptionPane.showMessageDialog(rootPane, "Empieza el Algoritmo", "Confirmacion", JOptionPane.PLAIN_MESSAGE);
+    }//GEN-LAST:event_Btn_StartActionPerformed
 
     /**
      * @param args the command line arguments
@@ -716,70 +1223,130 @@ public class interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btn_Entrenar;
     private javax.swing.JButton Btn_LimpiarPatron;
     private javax.swing.JButton Btn_ReadPatron;
-    private javax.swing.JRadioButton F0_C0;
-    private javax.swing.JRadioButton F0_C1;
-    private javax.swing.JRadioButton F0_C2;
-    private javax.swing.JRadioButton F0_C3;
-    private javax.swing.JRadioButton F0_C4;
-    private javax.swing.JRadioButton F0_C5;
-    private javax.swing.JRadioButton F0_C6;
-    private javax.swing.JRadioButton F1_C0;
-    private javax.swing.JRadioButton F1_C1;
-    private javax.swing.JRadioButton F1_C2;
-    private javax.swing.JRadioButton F1_C3;
-    private javax.swing.JRadioButton F1_C4;
-    private javax.swing.JRadioButton F1_C5;
-    private javax.swing.JRadioButton F1_C6;
-    private javax.swing.JRadioButton F2_C0;
-    private javax.swing.JRadioButton F2_C1;
-    private javax.swing.JRadioButton F2_C2;
-    private javax.swing.JRadioButton F2_C3;
-    private javax.swing.JRadioButton F2_C4;
-    private javax.swing.JRadioButton F2_C5;
-    private javax.swing.JRadioButton F2_C6;
-    private javax.swing.JRadioButton F3_C0;
-    private javax.swing.JRadioButton F3_C1;
-    private javax.swing.JRadioButton F3_C2;
-    private javax.swing.JRadioButton F3_C3;
-    private javax.swing.JRadioButton F3_C4;
-    private javax.swing.JRadioButton F3_C5;
-    private javax.swing.JRadioButton F3_C6;
-    private javax.swing.JRadioButton F4_C0;
-    private javax.swing.JRadioButton F4_C1;
-    private javax.swing.JRadioButton F4_C2;
-    private javax.swing.JRadioButton F4_C3;
-    private javax.swing.JRadioButton F4_C4;
-    private javax.swing.JRadioButton F4_C5;
-    private javax.swing.JRadioButton F4_C6;
-    private javax.swing.JRadioButton F5_C0;
-    private javax.swing.JRadioButton F5_C1;
-    private javax.swing.JRadioButton F5_C2;
-    private javax.swing.JRadioButton F5_C3;
-    private javax.swing.JRadioButton F5_C4;
-    private javax.swing.JRadioButton F5_C5;
-    private javax.swing.JRadioButton F5_C6;
-    private javax.swing.JRadioButton F6_C0;
-    private javax.swing.JRadioButton F6_C1;
-    private javax.swing.JRadioButton F6_C2;
-    private javax.swing.JRadioButton F6_C3;
-    private javax.swing.JRadioButton F6_C4;
-    private javax.swing.JRadioButton F6_C5;
-    private javax.swing.JRadioButton F6_C6;
+    private javax.swing.JButton Btn_Start;
+    private javax.swing.ButtonGroup GrpRbtn_TypeAlgorithm;
     private javax.swing.JPanel P_Acerca;
+    private javax.swing.JPanel P_Borrar;
     private javax.swing.JPanel P_Container_Acciones_Desc;
     private javax.swing.JPanel P_Container_Acciones_Leer;
     private javax.swing.JPanel P_Container_Patron;
+    private javax.swing.JPanel P_Container_Patron1;
     private javax.swing.JPanel P_Escribir;
     private javax.swing.JPanel P_Leer;
+    private javax.swing.JPanel P_Main;
+    private javax.swing.JRadioButton Pe_F0_C0;
+    private javax.swing.JRadioButton Pe_F0_C1;
+    private javax.swing.JRadioButton Pe_F0_C2;
+    private javax.swing.JRadioButton Pe_F0_C3;
+    private javax.swing.JRadioButton Pe_F0_C4;
+    private javax.swing.JRadioButton Pe_F0_C5;
+    private javax.swing.JRadioButton Pe_F0_C6;
+    private javax.swing.JRadioButton Pe_F1_C0;
+    private javax.swing.JRadioButton Pe_F1_C1;
+    private javax.swing.JRadioButton Pe_F1_C2;
+    private javax.swing.JRadioButton Pe_F1_C3;
+    private javax.swing.JRadioButton Pe_F1_C4;
+    private javax.swing.JRadioButton Pe_F1_C5;
+    private javax.swing.JRadioButton Pe_F1_C6;
+    private javax.swing.JRadioButton Pe_F2_C0;
+    private javax.swing.JRadioButton Pe_F2_C1;
+    private javax.swing.JRadioButton Pe_F2_C2;
+    private javax.swing.JRadioButton Pe_F2_C3;
+    private javax.swing.JRadioButton Pe_F2_C4;
+    private javax.swing.JRadioButton Pe_F2_C5;
+    private javax.swing.JRadioButton Pe_F2_C6;
+    private javax.swing.JRadioButton Pe_F3_C0;
+    private javax.swing.JRadioButton Pe_F3_C1;
+    private javax.swing.JRadioButton Pe_F3_C2;
+    private javax.swing.JRadioButton Pe_F3_C3;
+    private javax.swing.JRadioButton Pe_F3_C4;
+    private javax.swing.JRadioButton Pe_F3_C5;
+    private javax.swing.JRadioButton Pe_F3_C6;
+    private javax.swing.JRadioButton Pe_F4_C0;
+    private javax.swing.JRadioButton Pe_F4_C1;
+    private javax.swing.JRadioButton Pe_F4_C2;
+    private javax.swing.JRadioButton Pe_F4_C3;
+    private javax.swing.JRadioButton Pe_F4_C4;
+    private javax.swing.JRadioButton Pe_F4_C5;
+    private javax.swing.JRadioButton Pe_F4_C6;
+    private javax.swing.JRadioButton Pe_F5_C0;
+    private javax.swing.JRadioButton Pe_F5_C1;
+    private javax.swing.JRadioButton Pe_F5_C2;
+    private javax.swing.JRadioButton Pe_F5_C3;
+    private javax.swing.JRadioButton Pe_F5_C4;
+    private javax.swing.JRadioButton Pe_F5_C5;
+    private javax.swing.JRadioButton Pe_F5_C6;
+    private javax.swing.JRadioButton Pe_F6_C0;
+    private javax.swing.JRadioButton Pe_F6_C1;
+    private javax.swing.JRadioButton Pe_F6_C2;
+    private javax.swing.JRadioButton Pe_F6_C3;
+    private javax.swing.JRadioButton Pe_F6_C4;
+    private javax.swing.JRadioButton Pe_F6_C5;
+    private javax.swing.JRadioButton Pe_F6_C6;
+    private javax.swing.JRadioButton Pen_F0_C0;
+    private javax.swing.JRadioButton Pen_F0_C1;
+    private javax.swing.JRadioButton Pen_F0_C2;
+    private javax.swing.JRadioButton Pen_F0_C3;
+    private javax.swing.JRadioButton Pen_F0_C4;
+    private javax.swing.JRadioButton Pen_F0_C5;
+    private javax.swing.JRadioButton Pen_F0_C6;
+    private javax.swing.JRadioButton Pen_F1_C0;
+    private javax.swing.JRadioButton Pen_F1_C1;
+    private javax.swing.JRadioButton Pen_F1_C2;
+    private javax.swing.JRadioButton Pen_F1_C3;
+    private javax.swing.JRadioButton Pen_F1_C4;
+    private javax.swing.JRadioButton Pen_F1_C5;
+    private javax.swing.JRadioButton Pen_F1_C6;
+    private javax.swing.JRadioButton Pen_F2_C0;
+    private javax.swing.JRadioButton Pen_F2_C1;
+    private javax.swing.JRadioButton Pen_F2_C2;
+    private javax.swing.JRadioButton Pen_F2_C3;
+    private javax.swing.JRadioButton Pen_F2_C4;
+    private javax.swing.JRadioButton Pen_F2_C5;
+    private javax.swing.JRadioButton Pen_F2_C6;
+    private javax.swing.JRadioButton Pen_F3_C0;
+    private javax.swing.JRadioButton Pen_F3_C1;
+    private javax.swing.JRadioButton Pen_F3_C2;
+    private javax.swing.JRadioButton Pen_F3_C3;
+    private javax.swing.JRadioButton Pen_F3_C4;
+    private javax.swing.JRadioButton Pen_F3_C5;
+    private javax.swing.JRadioButton Pen_F3_C6;
+    private javax.swing.JRadioButton Pen_F4_C0;
+    private javax.swing.JRadioButton Pen_F4_C1;
+    private javax.swing.JRadioButton Pen_F4_C2;
+    private javax.swing.JRadioButton Pen_F4_C3;
+    private javax.swing.JRadioButton Pen_F4_C4;
+    private javax.swing.JRadioButton Pen_F4_C5;
+    private javax.swing.JRadioButton Pen_F4_C6;
+    private javax.swing.JRadioButton Pen_F5_C0;
+    private javax.swing.JRadioButton Pen_F5_C1;
+    private javax.swing.JRadioButton Pen_F5_C2;
+    private javax.swing.JRadioButton Pen_F5_C3;
+    private javax.swing.JRadioButton Pen_F5_C4;
+    private javax.swing.JRadioButton Pen_F5_C5;
+    private javax.swing.JRadioButton Pen_F5_C6;
+    private javax.swing.JRadioButton Pen_F6_C0;
+    private javax.swing.JRadioButton Pen_F6_C1;
+    private javax.swing.JRadioButton Pen_F6_C2;
+    private javax.swing.JRadioButton Pen_F6_C3;
+    private javax.swing.JRadioButton Pen_F6_C4;
+    private javax.swing.JRadioButton Pen_F6_C5;
+    private javax.swing.JRadioButton Pen_F6_C6;
     private javax.swing.JTabbedPane TPT;
     private javax.swing.JTable Table_Leer;
     private javax.swing.JTextField TxF_Descripcion;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
+    private javax.swing.JTextArea TxtA_Matriz;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JRadioButton rBtn_NNH;
+    private javax.swing.JRadioButton rBtn_NNHGA;
     // End of variables declaration//GEN-END:variables
 
     
