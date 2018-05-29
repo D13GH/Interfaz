@@ -143,7 +143,7 @@ public class interfaz extends javax.swing.JFrame {
             }
             
         }
-        TxtA_Matriz.setText(matriz.replace(" ", ""));
+        //TxtA_Matriz.setText(matriz.replace(" ", ""));
         System.out.println(matriz);
     }
     
@@ -162,7 +162,6 @@ public class interfaz extends javax.swing.JFrame {
                 patron_rb[i].setSelected(false);
             }
         }
-        
     }
 
     /**
@@ -235,7 +234,9 @@ public class interfaz extends javax.swing.JFrame {
         Btn_LimpiarPatron = new javax.swing.JButton();
         P_Container_Acciones_Desc = new javax.swing.JPanel();
         TxF_Descripcion = new javax.swing.JTextField();
-        P_Borrar = new javax.swing.JPanel();
+        P_Delete = new javax.swing.JPanel();
+        Cbx_Delete = new javax.swing.JComboBox<>();
+        Btn_Delete = new javax.swing.JButton();
         P_Main = new javax.swing.JPanel();
         P_Container_Patron1 = new javax.swing.JPanel();
         Pe_F0_C0 = new javax.swing.JRadioButton();
@@ -290,14 +291,14 @@ public class interfaz extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         rBtn_NNH = new javax.swing.JRadioButton();
         rBtn_NNHGA = new javax.swing.JRadioButton();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        TxtA_Matriz = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
         Btn_Start = new javax.swing.JButton();
         Btn_Entrenar = new javax.swing.JButton();
-        P_Acerca = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        TxtA_Ps = new javax.swing.JTextArea();
+        jPanel2 = new javax.swing.JPanel();
+        Btn_ShowMatriz = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -319,7 +320,7 @@ public class interfaz extends javax.swing.JFrame {
         P_Leer.setLayout(P_LeerLayout);
         P_LeerLayout.setHorizontalGroup(
             P_LeerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 817, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 991, Short.MAX_VALUE)
         );
         P_LeerLayout.setVerticalGroup(
             P_LeerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -683,7 +684,7 @@ public class interfaz extends javax.swing.JFrame {
                 .addGroup(P_EscribirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(P_Container_Acciones_Desc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(P_Container_Acciones_Leer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(451, Short.MAX_VALUE))
+                .addContainerGap(625, Short.MAX_VALUE))
         );
         P_EscribirLayout.setVerticalGroup(
             P_EscribirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -700,18 +701,40 @@ public class interfaz extends javax.swing.JFrame {
 
         TPT.addTab("Escribir", P_Escribir);
 
-        javax.swing.GroupLayout P_BorrarLayout = new javax.swing.GroupLayout(P_Borrar);
-        P_Borrar.setLayout(P_BorrarLayout);
-        P_BorrarLayout.setHorizontalGroup(
-            P_BorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 817, Short.MAX_VALUE)
+        Cbx_Delete.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        Btn_Delete.setText("Borrar");
+        Btn_Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_DeleteActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout P_DeleteLayout = new javax.swing.GroupLayout(P_Delete);
+        P_Delete.setLayout(P_DeleteLayout);
+        P_DeleteLayout.setHorizontalGroup(
+            P_DeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_DeleteLayout.createSequentialGroup()
+                .addGroup(P_DeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(P_DeleteLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Cbx_Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(P_DeleteLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(Btn_Delete)))
+                .addContainerGap(829, Short.MAX_VALUE))
         );
-        P_BorrarLayout.setVerticalGroup(
-            P_BorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 238, Short.MAX_VALUE)
+        P_DeleteLayout.setVerticalGroup(
+            P_DeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_DeleteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Cbx_Delete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Btn_Delete)
+                .addContainerGap(155, Short.MAX_VALUE))
         );
 
-        TPT.addTab("Borrar", P_Borrar);
+        TPT.addTab("Borrar", P_Delete);
 
         P_Container_Patron1.setBorder(javax.swing.BorderFactory.createTitledBorder("Patron"));
         P_Container_Patron1.setToolTipText("Entrada de patron para entrenamiento");
@@ -1021,31 +1044,6 @@ public class interfaz extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Matriz"));
-        jPanel2.setToolTipText("Mariz de aprendizage");
-
-        TxtA_Matriz.setColumns(20);
-        TxtA_Matriz.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        TxtA_Matriz.setRows(5);
-        TxtA_Matriz.setToolTipText("Matriz de aprendizage");
-        jScrollPane3.setViewportView(TxtA_Matriz);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jScrollPane3)
-                .addContainerGap())
-        );
-
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Aciones"));
         jPanel3.setToolTipText("Acciones posibles");
 
@@ -1059,7 +1057,7 @@ public class interfaz extends javax.swing.JFrame {
         });
 
         Btn_Entrenar.setText("Entrenar");
-        Btn_Entrenar.setToolTipText("Inicia proceso");
+        Btn_Entrenar.setToolTipText("Crea la matriz de entrenamiento");
         Btn_Entrenar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_EntrenarActionPerformed(evt);
@@ -1070,11 +1068,11 @@ public class interfaz extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Btn_Start)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Btn_Entrenar)
+                .addGap(18, 18, 18)
+                .addComponent(Btn_Start)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -1086,6 +1084,61 @@ public class interfaz extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Patron de salida"));
+        jPanel4.setToolTipText("Patron de Salida");
+
+        TxtA_Ps.setColumns(20);
+        TxtA_Ps.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        TxtA_Ps.setRows(5);
+        TxtA_Ps.setToolTipText("Patron al cual se asemenja el Pantron de entrada");
+        jScrollPane4.setViewportView(TxtA_Ps);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jScrollPane4)
+                .addContainerGap())
+        );
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Matriz de pesos"));
+        jPanel2.setToolTipText("Acciones sobre la interfaz Matriz");
+
+        Btn_ShowMatriz.setText("Mostrar");
+        Btn_ShowMatriz.setToolTipText("Muestra/Oculta Matriz");
+        Btn_ShowMatriz.setActionCommand("");
+        Btn_ShowMatriz.setEnabled(false);
+        Btn_ShowMatriz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_ShowMatrizActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Btn_ShowMatriz)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Btn_ShowMatriz)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout P_MainLayout = new javax.swing.GroupLayout(P_Main);
         P_Main.setLayout(P_MainLayout);
         P_MainLayout.setHorizontalGroup(
@@ -1094,61 +1147,40 @@ public class interfaz extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(P_Container_Patron1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(P_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(170, Short.MAX_VALUE))
+                    .addGroup(P_MainLayout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(271, Short.MAX_VALUE))
         );
         P_MainLayout.setVerticalGroup(
             P_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(P_MainLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(P_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_MainLayout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addGroup(P_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(P_Container_Patron1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
         TPT.addTab("Main", P_Main);
 
-        javax.swing.GroupLayout P_AcercaLayout = new javax.swing.GroupLayout(P_Acerca);
-        P_Acerca.setLayout(P_AcercaLayout);
-        P_AcercaLayout.setHorizontalGroup(
-            P_AcercaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 817, Short.MAX_VALUE)
-        );
-        P_AcercaLayout.setVerticalGroup(
-            P_AcercaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 238, Short.MAX_VALUE)
-        );
-
-        TPT.addTab("Acerca de", P_Acerca);
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 817, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 238, Short.MAX_VALUE)
-        );
-
-        TPT.addTab("tab6", jPanel6);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TPT, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(TPT)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1157,6 +1189,22 @@ public class interfaz extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Btn_EntrenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_EntrenarActionPerformed
+        this.getPatronE();
+        this.showPatronE();
+        this.Btn_Entrenar.setEnabled(false);
+        this.Btn_ShowMatriz.setEnabled(true);
+        this.Btn_Start.setEnabled(true);
+    }//GEN-LAST:event_Btn_EntrenarActionPerformed
+
+    private void Btn_StartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_StartActionPerformed
+        JOptionPane.showMessageDialog(rootPane, "Empieza el Algoritmo", "Confirmacion", JOptionPane.PLAIN_MESSAGE);
+    }//GEN-LAST:event_Btn_StartActionPerformed
+
+    private void Btn_LimpiarPatronActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_LimpiarPatronActionPerformed
+        this.clearPatron();
+    }//GEN-LAST:event_Btn_LimpiarPatronActionPerformed
 
     private void Btn_ReadPatronActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ReadPatronActionPerformed
         if (!TxF_Descripcion.getText().isEmpty())
@@ -1169,23 +1217,27 @@ public class interfaz extends javax.swing.JFrame {
         else{
             JOptionPane.showMessageDialog(rootPane, "Falta Agregar una descripcion", "Alerta", JOptionPane.ERROR_MESSAGE);
         }
-
     }//GEN-LAST:event_Btn_ReadPatronActionPerformed
 
-    private void Btn_LimpiarPatronActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_LimpiarPatronActionPerformed
-        this.clearPatron();
-    }//GEN-LAST:event_Btn_LimpiarPatronActionPerformed
+    i_MP iMP = new i_MP();
+    private void Btn_ShowMatrizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ShowMatrizActionPerformed
+        iMP.setMatriz("Hola");
+        if(!iMP.isVisible())
+        {
+            iMP.setVisible(true);
+            Btn_ShowMatriz.setText("Ocultar");
+        }
+        else
+        {
+            iMP.setVisible(false);
+            Btn_ShowMatriz.setText("Mostrar");
+        }
+        
+    }//GEN-LAST:event_Btn_ShowMatrizActionPerformed
 
-    private void Btn_EntrenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_EntrenarActionPerformed
-        this.getPatronE();
-        this.showPatronE();
-        this.Btn_Entrenar.setEnabled(false);
-        this.Btn_Start.setEnabled(true);
-    }//GEN-LAST:event_Btn_EntrenarActionPerformed
-
-    private void Btn_StartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_StartActionPerformed
-        JOptionPane.showMessageDialog(rootPane, "Empieza el Algoritmo", "Confirmacion", JOptionPane.PLAIN_MESSAGE);
-    }//GEN-LAST:event_Btn_StartActionPerformed
+    private void Btn_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_DeleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_DeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1223,17 +1275,19 @@ public class interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btn_Delete;
     private javax.swing.JButton Btn_Entrenar;
     private javax.swing.JButton Btn_LimpiarPatron;
     private javax.swing.JButton Btn_ReadPatron;
+    private javax.swing.JButton Btn_ShowMatriz;
     private javax.swing.JButton Btn_Start;
+    private javax.swing.JComboBox<String> Cbx_Delete;
     private javax.swing.ButtonGroup GrpRbtn_TypeAlgorithm;
-    private javax.swing.JPanel P_Acerca;
-    private javax.swing.JPanel P_Borrar;
     private javax.swing.JPanel P_Container_Acciones_Desc;
     private javax.swing.JPanel P_Container_Acciones_Leer;
     private javax.swing.JPanel P_Container_Patron;
     private javax.swing.JPanel P_Container_Patron1;
+    private javax.swing.JPanel P_Delete;
     private javax.swing.JPanel P_Escribir;
     private javax.swing.JPanel P_Leer;
     private javax.swing.JPanel P_Main;
@@ -1338,13 +1392,13 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JTabbedPane TPT;
     private javax.swing.JTable Table_Leer;
     private javax.swing.JTextField TxF_Descripcion;
-    private javax.swing.JTextArea TxtA_Matriz;
+    private javax.swing.JTextArea TxtA_Ps;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JRadioButton rBtn_NNH;
     private javax.swing.JRadioButton rBtn_NNHGA;
     // End of variables declaration//GEN-END:variables
